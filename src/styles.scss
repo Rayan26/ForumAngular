@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// variables globales :
+$polyinfo-darkblue: #0059b7;
+$polyinfo-lightblue: #007bff;
+
+// =============================================================================
+// the CSS for the Angular Material tables
+// =============================================================================
+$polyinfo-table-header-color: $polyinfo-lightblue;
+
+.forumTable {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.forumTable .mat-sort-header-button {
+  font-weight: bold !important;
+  font-size: 110%;
+  color: $polyinfo-table-header-color !important;
+}
+
+.forumTable .mat-sort-header {
+  font-weight: bold !important;
+  background-color: $polyinfo-table-header-color !important;
+  color: white;
+}
+
+.forumTable .mat-sort-header-arrow {
+  color: white !important;
+}
+
+.forumTable .mat-cell {
+  padding: 2px 7px 2px 7px;
+}

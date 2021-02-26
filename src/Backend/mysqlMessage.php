@@ -2,7 +2,7 @@
 
 require_once "mysqlConnect.php";
 // creation de l'instance PDO et connexion a la BD `
-$query = "SELECT * FROM $mysqlTable".
+$query = "SELECT * FROM $mysqlMessage".
          " WHERE id <= ? AND nbEtud != ?";
 
 $data = array(10,1);

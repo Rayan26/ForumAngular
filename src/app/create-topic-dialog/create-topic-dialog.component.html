@@ -1,1 +1,15 @@
-<p>create-topic-dialog works!</p>
+<h1 mat-dialog-title>Nouveau Sujet </h1>
+<div mat-dialog-content>
+  <p>Saisissez un nouveau sujet</p>
+  <mat-form-field>
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.titre">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onNoClick()">Fermer</button>
+  <button mat-raised-button color="primary" (click)="createTopic()" cdkFocusInitial>Créer le sujet</button>
+  <div class="alert alert-danger mt-3" *ngIf="!isHidden()" role="alert">
+    {{this.errorMessage}}
+  </div>
+</div>

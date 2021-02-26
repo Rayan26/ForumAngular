@@ -1,32 +1,33 @@
 <div class="container">
-<table  mat-table [dataSource] = "dataSource"  class = "mat-elevation-z8" >
+<table  mat-table [dataSource] = "coursData"  class = "mat-elevation-z8 table-hover forumTable" matSort>
 
 
 
 <ng-container  matColumnDef = "nom" >
-<th  mat-header-cell * matHeaderCellDef> No. </th >
-<td  mat-cell * matCellDef = "let element" > {{element.nom}} </td >
+<th  mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th >
+<td  mat-cell *matCellDef = "let element" ><a routerLink="/topics/{{element.idMatiere}}"  class="stretched-link">{{element.nom}}</a></td >
 </ng-container >
 
 
 <ng-container  matColumnDef = "nbTopic" >
-<th  mat-header-cell * matHeaderCellDef> Weight </th >
-<td  mat-cell*matCellDef = "let element" > {{element.nbTopic}} </td >
+<th  mat-header-cell *matHeaderCellDef mat-sort-header> #Topics </th >
+<td  mat-cell *matCellDef = "let element" > {{element.nbTopic}} </td >
 </ng-container >
 
   <ng-container  matColumnDef = "nbPost" >
-<th  mat-header-cell * matHeaderCellDef> Symbol </th >
-<td  mat-cell * matCellDef= "let element" > {{element.nbPost}} </td >
+<th  mat-header-cell *matHeaderCellDef mat-sort-header> #Post </th >
+<td  mat-cell *matCellDef= "let element" > {{element.nbPost}} </td >
 </ng-container >
 
 
   <ng-container  matColumnDef = "dateLastPost" >
-    <th  mat-header-cell * matHeaderCellDef> Dernier Message </th >
-    <td  mat-cell * matCellDef = "let element" > {{element.dateLastPost}} </td >
+    <th  mat-header-cell *matHeaderCellDef mat-sort-header> #Message </th >
+    <td  mat-cell *matCellDef = "let element" > {{element.dateLastPost}} </td >
   </ng-container >
 
-<tr  mat-header-row * matHeaderRowDef = " displayColumns " > </tr >
-<tr  mat-row * matRowDef = "let row; columns: shownColumns ;" > </tr >
+<tr  mat-header-row *matHeaderRowDef = " shownColumns "> </tr >
+<tr  mat-row *matRowDef = "let row; columns: shownColumns ;" style="transform: rotate(0);"> </tr >
 </table>
 
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
