@@ -29,17 +29,16 @@ export class TopicsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private service: MessageService, private route: ActivatedRoute, private  router: Router) { }
+  constructor(private message: MessageService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const formData = new FormData();
+    // const formData = new FormData();
+    // formData.append('idMatiere', this.route.snapshot.paramMap.get('idMatiere'));
     this.breadcrumb = [
       { nom: 'Tous les cours', route: '/cours' },
       { nom: 'Un cours', route: '' }
     ];
-    this.idMatiere = this.route.snapshot.paramMap.get('idMatiere');
-    formData.append('idMatiere', this.route.snapshot.paramMap.get('idMatiere'));
-    this.service.sendMessage('getTopics', formData).subscribe(value => {
+    this.message.sendMessage('getTopics', {idMatiere: this.route.snapshot.paramMap.get('idMatiere')}).subscribe(value => {
       if (value.status === 'ok'){
         console.log(value.data);
         this.listTopic = value.data;

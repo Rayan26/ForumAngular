@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 export interface BreadcrumbData {
-  nom: string,
-  route: string
+  nom: string;
+  route: string;
 }
 
 @Component({

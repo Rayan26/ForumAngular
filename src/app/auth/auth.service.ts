@@ -23,10 +23,10 @@ export class AuthService {
   }
 
   sendLogin(login: string, password: string): Observable<PhpData> {
-    const form = new FormData();
-    form.append('login', login);
-    form.append('password', password);
-    return this.messageService.sendMessage('checkLogin', form);
+    // const form = new FormData();
+    // form.append('login', login);
+    // form.append('password', password);
+    return this.messageService.sendMessage('checkLogin', {login, password});
   }
 
   finalizeAuthentication(data: PhpData): void {

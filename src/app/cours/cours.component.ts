@@ -29,7 +29,7 @@ export class CoursComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.sendMessage('getCours','').subscribe(value => {
+    this.service.sendMessage('getCours2','').subscribe(value => {
       if (value.status === 'ok'){
         console.log(value.data);
         this.coursData.data = value.data;

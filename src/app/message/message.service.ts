@@ -12,7 +12,7 @@ export class MessageService {
   }
 
   sendMessage(url: string, data: any): Observable<PhpData>{
-      return this.http.post<PhpData>(environment.url.concat(url, '.php'), data, {withCredentials: true});
+    return this.http.post<PhpData>(environment.url.concat(url), data, {withCredentials: true});
   }
 
 
